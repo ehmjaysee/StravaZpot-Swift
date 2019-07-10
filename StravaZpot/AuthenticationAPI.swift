@@ -18,4 +18,10 @@ public class AuthenticationAPI {
     public func getToken(forApp app : AppCredentials, withCode code : String) -> AuthenticationRequest {
         return AuthenticationRequest(client: client, appCredentials: app, code: code)
     }
+
+    //mjc
+    public func refreshToken(forApp app : AppCredentials, withToken token : String) -> AuthRefreshRequest {
+        return AuthRefreshRequest(client: client, appCredentials: app, token: token)
+    }
+
 }

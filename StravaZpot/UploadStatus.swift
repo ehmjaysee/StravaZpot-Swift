@@ -8,12 +8,13 @@
 
 import Foundation
 
+//mjc added 'public' to the structure elements
 public struct UploadStatus {
-    let id : Int
-    let externalID : String?
-    let error : String?
-    let status : String?
-    let activityID : Int?
+    public let id : Int
+    public let externalID : String?
+    public let error : String?
+    public let status : String?
+    public let activityID : Int?
 }
 
 extension UploadStatus : Equatable {}
