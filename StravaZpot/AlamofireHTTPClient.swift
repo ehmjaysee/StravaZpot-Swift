@@ -63,14 +63,15 @@ public class AlamofireHTTPClient : HTTPClient {
     
     private func request(url : String, method: HTTPMethod, parameters : [String : Any], callback : @escaping (StravaResult<JSON>) -> ())
     {
-        // MJC Changes required here due to iOS 13 forbids a body in GET request
+        //mjc
+        // Changes required here due to iOS 13 forbids a body in GET request
         // https://stackoverflow.com/questions/56955595/1103-error-domain-nsurlerrordomain-code-1103-resource-exceeds-maximum-size-i
         // Previous code was using JSONEncoding for the GET request. The fix was to simply use the default encoder
         // which is URLEncoding.default.
         // Also check if parameters is empty and pass in nil instead of [:]
-        let param: Parameters? = (parameters.count == 0) ? nil:parameters  //debug
-        //debug Alamofire.request(baseURL + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-            Alamofire.request(baseURL + url, method: method, parameters: param, /* encoding: JSONEncoding.default,*/ headers: headers)
+        let param: Parameters? = (parameters.count == 0) ? nil:parameters
+        // original: Alamofire.request(baseURL + url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        Alamofire.request(baseURL + url, method: method, parameters: param, /* encoding: JSONEncoding.default,*/ headers: headers)
             .validate(statusCode: 200 ..< 300)
             .responseJSON { response in
                 self.responseCallback(response, callback)
