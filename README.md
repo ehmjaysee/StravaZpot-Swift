@@ -2,6 +2,16 @@
 
 A fluent API to integrate with Strava on iOS apps written in Swift.
 
+## Repo History
+
+The original repo (SweetzpotAS/StravaZpot-Swift) is now archived. This fork was created in order to continue using this great library with modern iOS apps. Some of the changes made to this fork include:
+1) Support SwifyJSON 5x
+2) Support xcode 13.0
+3) Support iOS 13.0
+4) Support Swift 5
+5) Fix crashes when Strava does not return data for optional activity properties 
+6) Support Strava OAUTH authentication
+ 
 ## Usage
 
 This document explains how to use **StravaZpot** in your Swift iOS app. For additional questions, you may want to check **Strava** official documentation [here](https://strava.github.io/api/).
@@ -606,7 +616,7 @@ uploadAPI.checkUploadStatus(withId: 16486788)
 You can get **StravaZpot** from CocoaPods. Just add this line to your Podfile:
 
 ```ruby
-pod 'StravaZpot-Swift', '~> 1.0.5'
+pod 'StravaZpot-Swift', :git => 'https://github.com/ehmjaysee/StravaZpot-Swift.git'
 ```
 
 ## License
