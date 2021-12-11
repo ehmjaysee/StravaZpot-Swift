@@ -1,8 +1,6 @@
 # StravaZpot Swift
 
-A fluent API to integrate with Strava on iOS apps written in Swift.
-
-This document explains how to use **StravaZpot** in your Swift iOS app. For additional questions, you may want to check **Strava** official documentation [here](https://strava.github.io/api/).
+Strava provides a rich API for app developers to use in their own apps. Anyone can use this API to get access to most of the information you see in the official Strava apps including new file uploads. StravaZpot provides a convenient Swift API to make the integration easier. You may want to check the [official Strava API documentation](https://strava.github.io/api/) to understand the full details.
 
 ## Repo History
 
