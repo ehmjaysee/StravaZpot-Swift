@@ -65,6 +65,8 @@ if let url = URL(string: remoteAuth) {
 }
 ```
 
+Notice in the example code above you need to define a custom URL scheme for your app. [See this page](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)  for more information how to create custom URL schemes.
+
 The example code above will present the user with a UI to grant permissions. When the user grants permission Strava will send a code to your app. Prepare your app to receive the response in your AppDelegate.
 
 ```swift
