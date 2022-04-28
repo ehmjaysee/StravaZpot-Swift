@@ -65,6 +65,68 @@ public struct Activity {
     public let splitsStandard : EquatableArray<Split>?
     public let segmentEfforts : EquatableArray<SegmentEffort>?
     public let bestEfforts : EquatableArray<SegmentEffort>?
+    
+    init( name:String, endCoordinates: Coordinates?, segmentEfforts:EquatableArray<SegmentEffort>? )
+    {
+        self.name = name
+        self.endCoordinates = endCoordinates
+        self.segmentEfforts = segmentEfforts
+        
+        id = 0
+        resourceState = .summary
+        externalID = nil
+        uploadID = nil
+        athlete = nil
+        description = nil
+        distance = nil
+        movingTime = nil
+        elapsedTime = nil
+        totalElevationGain = nil
+        elevationHigh = nil
+        elevationLow = nil
+        type = nil
+        startDate = nil
+        startDateLocal = nil
+        timezone = nil
+        startCoordinates = nil
+//        endCoordinates = nil
+        achievementCount = nil
+        kudosCount = nil
+        commentCount = nil
+        athleteCount = nil
+        photoCount = nil
+        totalPhotoCount = nil
+        photos = nil
+        map = nil
+        hasTrainer = nil
+        isCommute = nil
+        isManual = nil
+        isPrivate = nil
+        deviceName = nil
+        embedToken = nil
+        isFlagged = nil
+        workoutType = nil
+        gearID = nil
+        gear = nil
+        averageSpeed = nil
+        maxSpeed = nil
+        averageCadence = nil
+        averageTemperature = nil
+        averageWatts = nil
+        maxWatts = nil
+        weightedAverageWatts = nil
+        kilojoules = nil
+        hasDeviceWatts = nil
+        hasHeartRate = nil
+        averageHeartRate = nil
+        maxHeartRate = nil
+        calories = nil
+        sufferScore = nil
+        hasKudoed = nil
+        splitsMetric = nil
+        splitsStandard = nil
+        bestEfforts = nil
+    }
 }
 
 extension Activity : Equatable {}

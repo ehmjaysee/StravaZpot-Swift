@@ -9,6 +9,33 @@
 import Foundation
 import SwiftyJSON
 
+
+public class ActivityParser : Parser {
+    public func from(json: JSON) -> Activity {
+        return Activity(
+            name: json["name"].string ?? "unknown",
+            endCoordinates: json["end_latlng"].coordinates,
+
+            segmentEfforts: json["segment_efforts"].segmentEffortArray
+        )
+    }
+}
+
+
+/*
+ 
+ 4/27/2022 MJC
+ Original ActivityParser is shown below.
+ Most of the properties in this structure are not used by the application.
+ The code below is highly unstable because it does not properly parse optional data from Strava.
+ For example this json was returned by Strava leading to a crash:
+ 
+        "end_latlng" : [
+ 
+        ],
+
+ The code does not check for empty properties such as this one. Therefore we now only parse segmentEfforts[]
+ 
 public class ActivityParser : Parser {
     public func from(json: JSON) -> Activity {
         return Activity(id: json["id"].int!,
@@ -69,3 +96,4 @@ public class ActivityParser : Parser {
                         bestEfforts: json["best_efforts"].segmentEffortArray)
     }
 }
+*/
