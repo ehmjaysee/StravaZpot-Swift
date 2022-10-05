@@ -10,8 +10,11 @@ import Foundation
 import SwiftyJSON
 
 public class CoordinatesParser : Parser {
-    public func from(json: JSON) -> Coordinates {
-        return Coordinates(latitude: json.arrayValue[0].double ?? 0.0,
-                           longitude: json.arrayValue[1].double ?? 0.0)
+    public func from(json: JSON) -> Coordinates? {
+        if let values = json.array, values.count >= 2 {
+            return Coordinates(latitude: values[0].double ?? 0.0, longitude: values[1].double ?? 0.0)
+        } else {
+            return nil
+        }
     }
 }
